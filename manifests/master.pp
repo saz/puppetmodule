@@ -128,7 +128,7 @@ class puppet::master (
   if ! defined(File[$::puppet::params::puppet_conf]){
     file { $::puppet::params::puppet_conf:
       ensure  => 'file',
-      mode    => '0655',
+      mode    => '0644',
       require => File[$::puppet::params::confdir],
       owner   => $::puppet::params::puppet_user,
       group   => $::puppet::params::puppet_group,
@@ -144,7 +144,7 @@ class puppet::master (
   if ! defined(File[$::puppet::params::confdir]) {
     file { $::puppet::params::confdir:
       ensure  => directory,
-      mode    => '0655',
+      mode    => '0755',
       require => Package[$puppet_master_package],
       owner   => $::puppet::params::puppet_user,
       group   => $::puppet::params::puppet_group,
