@@ -31,6 +31,7 @@ class puppet::params {
   $puppetdb_strict_validation       = true
   $environments                     = 'config'
   $digest_algorithm                 = 'md5'
+  $facter_base                      = '/etc/facter/facts.d'
 
   # Only used when environments == directory
   $environmentpath                  = '$confdir/environments'
